@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <!-- Top Status Bar -->
+    <LinearLayout
+        android:id="@+id/topStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:orientation="horizontal"
+        android:padding="@dimen/status_bar_padding"
+        android:background="@drawable/top_bar_background"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Left Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NeoWave"
+                android:textColor="@color/blue_400"
+                android:textSize="@dimen/brand_text_size"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:background="@drawable/status_indicator_background_green"
+                android:padding="@dimen/small_padding"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:src="@drawable/round_directions_car_24"
+                    android:tint="@color/green_400" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="P"
+                    android:textColor="@color/green_400"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Right Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Voltage Indicator -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/status_indicator_background_orange"
+                android:padding="@dimen/small_padding"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:src="@drawable/round_battery_full_24"
+                    android:tint="@color/orange_400" />
+
+                <TextView
+                    android:id="@+id/tvVoltage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="13.2V"
+                    android:textColor="@color/orange_400"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Temperature Indicator -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/status_indicator_background_blue"
+                android:padding="@dimen/small_padding"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:src="@drawable/ic_temperature"
+                    android:tint="@color/blue_400" />
+
+                <TextView
+                    android:id="@+id/tvTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="24°C"
+                    android:textColor="@color/blue_400"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topStatusBar" >
+    <!-- Main Content Container -->
+    <FrameLayout
+        android:id="@+id/mainContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+        <!-- Home View -->
+        <include
+            android:id="@+id/homeView"
+            layout="@layout/view_home2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+
+
+    </FrameLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_nav_height"
+        android:background="@drawable/bottom_nav_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/bottom_nav_padding"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Placeholder for home button (to keep space) -->
+        <View
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:visibility="invisible" />
+
+        <!-- Center Section - Pinned Apps -->
+        <LinearLayout
+            android:id="@+id/pinnedAppsContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/medium_margin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/appPhone"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_green"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/round_phone_android_24" />
+
+            <ImageView
+                android:id="@+id/appMessages"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_blue"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/round_message_24" />
+
+            <ImageView
+                android:id="@+id/appMusic"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_pink"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/baseline_music_note_24" />
+
+            <ImageView
+                android:id="@+id/appMaps"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_blue"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/round_map_24" />
+
+            <ImageView
+                android:id="@+id/appSettings"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/round_settings_24" />
+
+            <ImageView
+                android:id="@+id/appCamera"
+                android:layout_width="@dimen/app_icon_size"
+                android:layout_height="@dimen/app_icon_size"
+                android:layout_margin="@dimen/app_icon_margin"
+                android:background="@drawable/app_icon_background_gray"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/app_icon_padding"
+                android:scaleType="centerInside"
+                android:src="@drawable/round_camera_alt_24" />
+
+        </LinearLayout>
+
+        <!-- Right Section - Status Info -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:minWidth="@dimen/status_info_min_width"
+            android:orientation="vertical">
+
+            <!-- Time Display -->
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:gravity="end"
+                android:text="14:25"
+                android:textColor="@color/blue_400"
+                android:textSize="@dimen/time_text_size"
+                android:textStyle="bold" />
+
+            <!-- Network Info -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tele2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/network_text_size"
+                    android:textStyle="normal" />
+
+                <!-- Signal Dots -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/signal_dot_size"
+                        android:layout_height="@dimen/signal_dot_size"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/signal_dot_active" />
+
+                    <View
+                        android:layout_width="@dimen/signal_dot_size"
+                        android:layout_height="@dimen/signal_dot_size"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/signal_dot_active" />
+
+                    <View
+                        android:layout_width="@dimen/signal_dot_size"
+                        android:layout_height="@dimen/signal_dot_size"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/signal_dot_active" />
+
+                    <View
+                        android:layout_width="@dimen/signal_dot_size"
+                        android:layout_height="@dimen/signal_dot_size"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/signal_dot_inactive" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LTE"
+                    android:textColor="@color/gray_300"
+                    android:textSize="@dimen/network_text_size" />
+
+            </LinearLayout>
+
+            <!-- Date Display -->
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="end"
+                android:text="Понедельник, 27 января"
+                android:textColor="@color/gray_400"
+                android:textSize="@dimen/date_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <FrameLayout
+            android:translationZ="3dp"
+            android:id="@+id/mainContentContainerw"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:elevation="9dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+
+            <!-- Multitask View -->
+            <include
+                android:id="@+id/multitaskView"
+                layout="@layout/view_multitask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <!-- Apps View -->
+            <include
+                android:id="@+id/appsView"
+                layout="@layout/view_apps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+        <!-- Draggable Home Button (now in root layout) -->
+        <com.keeppixel.magnitalo.DraggableHomeButton
+            android:id="@+id/draggableHomeButton"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_marginStart="@dimen/bottom_nav_padding"
+            android:elevation="12dp"
+            android:translationZ="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottomNavigation"
+            app:layout_constraintStart_toStartOf="@id/bottomNavigation"
+            app:layout_constraintTop_toTopOf="@+id/bottomNavigation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/content_padding">
+
+    <!-- Widgets Grid Container -->
+    <GridLayout
+        android:id="@+id/widgetsGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Maps Widget - Large (spans 2 rows) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="2"
+            android:layout_rowSpan="2"
+            android:layout_margin="@dimen/widget_margin"
+            app:cardCornerRadius="@dimen/widget_corner_radius"
+            app:cardElevation="@dimen/widget_elevation"
+            app:cardBackgroundColor="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/widget_background_blue"
+                android:padding="@dimen/widget_padding">
+
+                <!-- Maps Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/medium_margin">
+
+                    <ImageView
+                        android:layout_width="@dimen/widget_icon_size"
+                        android:layout_height="@dimen/widget_icon_size"
+                        android:src="@drawable/round_map_24"
+                        android:background="@drawable/widget_icon_background"
+                        android:padding="@dimen/small_padding"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:text="Карты"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/widget_title_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Route Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/route_info_background"
+                    android:padding="@dimen/medium_padding"
+                    android:layout_marginVertical="@dimen/medium_margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Домой"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/destination_text_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ул. Пушкина, 15, Москва"
+                        android:textColor="@color/gray_300"
+                        android:textSize="@dimen/address_text_size"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="@dimen/small_margin" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="⏱️ 18 мин"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/route_stat_text_size" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🛣️ 4.2 км"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/route_stat_text_size"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="⛽ -3%"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/route_stat_text_size"
+                            android:gravity="end" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Music Widget -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="@dimen/widget_margin"
+            app:cardCornerRadius="@dimen/widget_corner_radius"
+            app:cardElevation="@dimen/widget_elevation"
+            app:cardBackgroundColor="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/widget_background_pink"
+                android:padding="@dimen/widget_padding"
+                android:gravity="center">
+
+                <!-- Music Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="@dimen/small_widget_icon_size"
+                        android:layout_height="@dimen/small_widget_icon_size"
+                        android:src="@drawable/baseline_music_note_24"
+                        android:background="@drawable/widget_icon_background"
+                        android:padding="@dimen/small_padding"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:text="Музыка"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_widget_title_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Album Art -->
+                <ImageView
+                    android:layout_width="@dimen/album_art_size"
+                    android:layout_height="@dimen/album_art_size"
+                    android:src="@drawable/baseline_music_note_24"
+                    android:background="@drawable/album_art_background"
+                    android:padding="@dimen/medium_padding"
+                    android:layout_marginVertical="@dimen/small_margin" />
+
+                <!-- Track Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/small_margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bohemian Rhapsody"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/track_title_size"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Queen"
+                        android:textColor="@color/gray_300"
+                        android:textSize="@dimen/artist_name_size"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <!-- Music Controls -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/control_button_size"
+                        android:layout_height="@dimen/control_button_size"
+                        android:src="@drawable/ic_skip_previous"
+                        android:background="@drawable/control_button_background"
+                        android:padding="@dimen/small_padding"
+                        android:layout_margin="@dimen/small_margin"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <ImageView
+                        android:layout_width="@dimen/play_button_size"
+                        android:layout_height="@dimen/play_button_size"
+                        android:src="@drawable/round_pause_24"
+                        android:background="@drawable/play_button_background"
+                        android:padding="@dimen/small_padding"
+                        android:layout_margin="@dimen/small_margin"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <ImageView
+                        android:layout_width="@dimen/control_button_size"
+                        android:layout_height="@dimen/control_button_size"
+                        android:src="@drawable/baseline_skip_next_24"
+                        android:background="@drawable/control_button_background"
+                        android:padding="@dimen/small_padding"
+                        android:layout_margin="@dimen/small_margin"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Weather Widget -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="@dimen/widget_margin"
+            app:cardCornerRadius="@dimen/widget_corner_radius"
+            app:cardElevation="@dimen/widget_elevation"
+            app:cardBackgroundColor="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/widget_background_green"
+                android:padding="@dimen/widget_padding"
+                android:gravity="center">
+
+                <!-- Weather Header -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Погода"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_widget_title_size"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/small_margin" />
+
+                <!-- Weather Icon -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☀️"
+                    android:textSize="@dimen/weather_icon_size"
+                    android:layout_marginVertical="@dimen/small_margin" />
+
+                <!-- Temperature -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24°"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/temperature_size"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/small_margin" />
+
+                <!-- Weather Description -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Солнечно"
+                    android:textColor="@color/gray_300"
+                    android:textSize="@dimen/weather_desc_size"
+                    android:layout_marginBottom="@dimen/small_margin" />
+
+                <!-- Weather Details -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Москва"
+                        android:textColor="@color/gray_400"
+                        android:textSize="@dimen/weather_detail_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💨 8 км/ч"
+                        android:textColor="@color/gray_400"
+                        android:textSize="@dimen/weather_detail_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💧 45%"
+                        android:textColor="@color/gray_400"
+                        android:textSize="@dimen/weather_detail_size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Phone Widget -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="@dimen/widget_margin"
+            app:cardCornerRadius="@dimen/widget_corner_radius"
+            app:cardElevation="@dimen/widget_elevation"
+            app:cardBackgroundColor="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/widget_background_green"
+                android:padding="@dimen/widget_padding">
+
+                <!-- Phone Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="@dimen/small_widget_icon_size"
+                        android:layout_height="@dimen/small_widget_icon_size"
+                        android:src="@drawable/round_phone_android_24"
+                        android:background="@drawable/widget_icon_background"
+                        android:padding="@dimen/small_padding"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:text="Недавние"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_widget_title_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Recent Calls List -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recentCallsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Speedometer Widget -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="@dimen/widget_margin"
+            app:cardCornerRadius="@dimen/widget_corner_radius"
+            app:cardElevation="@dimen/widget_elevation"
+            app:cardBackgroundColor="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/widget_background_orange"
+                android:padding="@dimen/widget_padding"
+                android:gravity="center">
+
+                <!-- Speedometer Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="@dimen/small_widget_icon_size"
+                        android:layout_height="@dimen/small_widget_icon_size"
+                        android:src="@drawable/ic_speedometer"
+                        android:background="@drawable/widget_icon_background"
+                        android:padding="@dimen/small_padding"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:text="Скорость"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/small_widget_title_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Speedometer View -->
+                <com.keeppixel.magnitalo.SpeedometerView
+                    android:id="@+id/speedometerView"
+                    android:layout_width="@dimen/speedometer_size"
+                    android:layout_height="@dimen/speedometer_size"
+                    android:layout_marginVertical="@dimen/small_margin" />
+
+                <!-- Speed Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margin">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Макс: 120"
+                        android:textColor="@color/gray_300"
+                        android:textSize="@dimen/speed_info_size"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Средн: 45"
+                        android:textColor="@color/gray_300"
+                        android:textSize="@dimen/speed_info_size"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Status Bar -->
+    <dimen name="status_bar_height">56dp</dimen>
+    <dimen name="status_bar_padding">16dp</dimen>
+    <dimen name="brand_text_size">18sp</dimen>
+
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_padding">16dp</dimen>
+    <dimen name="home_button_size">56dp</dimen>
+
+    <!-- App Icons -->
+    <dimen name="app_icon_size">48dp</dimen>
+    <dimen name="app_icon_margin">6dp</dimen>
+    <dimen name="app_icon_padding">12dp</dimen>
+
+    <!-- Status Info -->
+    <dimen name="status_info_min_width">140dp</dimen>
+    <dimen name="time_text_size">20sp</dimen>
+    <dimen name="network_text_size">12sp</dimen>
+    <dimen name="date_text_size">10sp</dimen>
+    <dimen name="signal_dot_size">4dp</dimen>
+
+    <!-- Widgets -->
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="widget_padding">20dp</dimen>
+    <dimen name="widget_corner_radius">16dp</dimen>
+    <dimen name="widget_elevation">8dp</dimen>
+    <dimen name="widget_icon_size">28dp</dimen>
+    <dimen name="small_widget_icon_size">24dp</dimen>
+    <dimen name="widget_title_size">16sp</dimen>
+    <dimen name="small_widget_title_size">14sp</dimen>
+
+    <!-- Maps Widget -->
+    <dimen name="destination_text_size">16sp</dimen>
+    <dimen name="address_text_size">12sp</dimen>
+    <dimen name="route_stat_text_size">12sp</dimen>
+
+    <!-- Music Widget -->
+    <dimen name="album_art_size">60dp</dimen>
+    <dimen name="track_title_size">14sp</dimen>
+    <dimen name="artist_name_size">12sp</dimen>
+    <dimen name="control_button_size">32dp</dimen>
+    <dimen name="play_button_size">40dp</dimen>
+
+    <!-- Weather Widget -->
+    <dimen name="weather_icon_size">36sp</dimen>
+    <dimen name="temperature_size">28sp</dimen>
+    <dimen name="weather_desc_size">12sp</dimen>
+    <dimen name="weather_detail_size">10sp</dimen>
+
+    <!-- Speedometer Widget -->
+    <dimen name="speedometer_size">100dp</dimen>
+    <dimen name="speed_info_size">10sp</dimen>
+
+    <!-- Common -->
+    <dimen name="content_padding">16dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="medium_padding">8dp</dimen>
+    <dimen name="large_padding">16dp</dimen>
+    <dimen name="small_icon_size">16dp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="title_text_size">10sp</dimen>
+    <dimen name="medium_icon_size" >10sp</dimen>
+    <dimen name="body_text_size" >10sp</dimen>
+    <dimen name="large_icon_size" >10sp</dimen>
+    <dimen name="header_text_size" >10sp</dimen>
+</resources>

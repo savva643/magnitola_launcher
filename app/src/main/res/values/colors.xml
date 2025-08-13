@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="gray_600">#FF4B5563</color>
+    <color name="blue_500">#FF3B82F6</color>
+    <color name="blue_600">#FF2563EB</color>
+    <color name="green_500">#FF22C55E</color>
+    <color name="green_600">#FF16A34A</color>
+    <color name="red_500">#FFEF4444</color>
+    <color name="purple_500">#FFA855F7</color>
+    <color name="purple_600">#FF9333EA</color>
+    <color name="orange_500">#FFF97316</color>
+
+    <!-- Transparent colors -->
+    <color name="white_10">#1AFFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="black_50">#80000000</color>
+
+    <!-- Background colors -->
+    <color name="card_background">#FF1F2937</color>
+    <color name="purple_gradient_start">#FF8B5CF6</color>
+
+    <!-- Primary Colors -->
+    <color name="blue_400">#007AFF</color>
+    <color name="green_400">#30D158</color>
+    <color name="orange_400">#FF9500</color>
+    <color name="pink_400">#FF2D92</color>
+
+    <!-- Text Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray_300">#D1D1D6</color>
+    <color name="gray_400">#8E8E93</color>
+    <color name="gray_500">#636366</color>
+
+    <!-- Background Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="black_alpha_80">#CC000000</color>
+    <color name="black_alpha_40">#66000000</color>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:padding="@dimen/content_padding">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/large_margin">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Недавние приложения"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Clear All Button -->
+        <TextView
+            android:id="@+id/btnClearAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закрыть все"
+            android:textColor="@color/blue_400"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/clear_all_button_background"
+            android:padding="@dimen/small_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+    </LinearLayout>
+
+    <!-- Apps Count -->
+    <TextView
+        android:id="@+id/tvAppsCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5 открытых приложений"
+        android:textColor="@color/gray_300"
+        android:textSize="14sp"
+        android:layout_marginBottom="@dimen/medium_margin" />
+
+    <!-- Recent Apps List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentAppsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="@dimen/small_padding" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/baseline_apps_24"
+            android:tint="@color/gray_400"
+            android:layout_marginBottom="@dimen/medium_margin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Нет недавних приложений"
+            android:textColor="@color/gray_300"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/small_margin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Откройте приложения, чтобы увидеть их здесь"
+            android:textColor="@color/gray_400"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

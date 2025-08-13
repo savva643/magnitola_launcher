@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/small_margin"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="12dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/large_padding">
+
+        <!-- Music Source Selector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Источник аудио"
+            android:textColor="@color/gray_400"
+            android:textSize="@dimen/small_text_size"
+            android:layout_marginBottom="@dimen/small_margin" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="@dimen/medium_margin">
+
+            <LinearLayout
+                android:id="@+id/musicSourcesLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!-- Music source buttons will be added programmatically -->
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Album Art & Track Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="@dimen/medium_margin"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/purple_gradient_start">
+
+                <ImageView
+                    android:id="@+id/ivAlbumArt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_music_note_24"
+                    app:tint="@color/white"
+                    android:scaleType="centerInside"
+                    android:padding="32dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvTrackName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Artist - Track Name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvCurrentSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Источник: USB"
+                android:textColor="@color/gray_400"
+                android:textSize="@dimen/small_text_size" />
+
+        </LinearLayout>
+
+        <!-- Progress Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/medium_margin">
+
+            <SeekBar
+                android:id="@+id/seekBarProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="40"
+                android:max="100"
+                android:progressTint="@color/blue_500"
+                android:thumbTint="@color/blue_500"
+                android:progressBackgroundTint="@color/white_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tvCurrentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1:23"
+                    android:textColor="@color/gray_400"
+                    android:textSize="@dimen/small_text_size" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvTotalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3:45"
+                    android:textColor="@color/gray_400"
+                    android:textSize="@dimen/small_text_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Control Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/circular_button_background_secondary"
+                android:src="@drawable/baseline_skip_previous_24"
+                app:tint="@color/white"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginHorizontal="@dimen/medium_margin"
+                android:background="@drawable/circular_button_background_primary"
+                android:src="@drawable/round_play_arrow_24"
+                app:tint="@color/white"
+                android:scaleType="centerInside"
+                android:elevation="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:background="@drawable/circular_button_background_secondary"
+                android:src="@drawable/baseline_skip_next_24"
+                app:tint="@color/white"
+                android:scaleType="centerInside" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

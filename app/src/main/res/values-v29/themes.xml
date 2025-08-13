@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.Magnitalo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Убираем статус-бар -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Для устройств с вырезом экрана -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+
+        <!-- Отключаем полупрозрачную панель навигации -->
+        <item name="android:windowTranslucentNavigation">false</item>
+
+        <!-- Для Android 10 и ниже -->
+        <item name="android:windowTranslucentStatus">false</item>
+
+        <!-- Для API 30+ (Android 11 и выше) -->
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+
+        <!-- Цвет панели навигации (прозрачный) -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Отключаем тени у панели навигации -->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+</resources>
